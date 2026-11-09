@@ -1,17 +1,17 @@
 <?php
 
-namespace Omnigame\Rawg\Tests;
+namespace Omniplay\Rawg\Tests;
 
-use Omnigame\Exception\NotSupportedException;
-use Omnigame\Exception\ProviderException;
-use Omnigame\Model\Game;
-use Omnigame\Model\GameRef;
-use Omnigame\Model\Platform;
-use Omnigame\Model\Query;
-use Omnigame\Model\Rating;
-use Omnigame\Rawg\RawgFactory;
-use Omnigame\Rawg\RawgProvider;
-use Omnigame\Testing\RecordedHttpClient;
+use Omniplay\Exception\NotSupportedException;
+use Omniplay\Exception\ProviderException;
+use Omniplay\Model\Game;
+use Omniplay\Model\GameRef;
+use Omniplay\Model\Platform;
+use Omniplay\Model\Query;
+use Omniplay\Model\Rating;
+use Omniplay\Rawg\RawgFactory;
+use Omniplay\Rawg\RawgProvider;
+use Omniplay\Testing\RecordedHttpClient;
 use PHPUnit\Framework\TestCase;
 
 /**

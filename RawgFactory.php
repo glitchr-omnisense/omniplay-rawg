@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnigame\Rawg;
+namespace Omniplay\Rawg;
 
-use Omnigame\Config;
-use Omnigame\Http\JsonClient;
-use Omnigame\ProviderFactory;
-use Omnigame\ProviderInterface;
+use Omniplay\Config;
+use Omniplay\Http\JsonClient;
+use Omniplay\ProviderFactory;
+use Omniplay\ProviderInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -19,10 +19,10 @@ final class RawgFactory extends ProviderFactory
     protected function populate(Config $c): void
     {
         $c->defaults([
-            'omnigame.factory_name' => 'rawg',
-            'omnigame.factory_title' => 'RAWG',
-            'omnigame.required_options' => ['api_key'],
-            'user_agent' => 'omnigame/1.0 (+https://github.com/glitchr-omnisense/omnigame)',
+            'omniplay.factory_name' => 'rawg',
+            'omniplay.factory_title' => 'RAWG',
+            'omniplay.required_options' => ['api_key'],
+            'user_agent' => 'omniplay/1.0 (+https://github.com/glitchr-omnisense/omniplay)',
             'api' => 'https://api.rawg.io/api',
         ]);
     }

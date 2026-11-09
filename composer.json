@@ -1,16 +1,16 @@
 {
-    "name": "omnigame/rawg",
+    "name": "omniplay/rawg",
     "type": "library",
-    "description": "Omnigame's RAWG, under any PHP host: search and a game's record with its studios, platforms, scores and the stores that sell it - its Steam number, itch.io page and Epic slug read from their links - with an API key.",
+    "description": "Omniplay's RAWG, under any PHP host: search and a game's record with its studios, platforms, scores and the stores that sell it - its Steam number, itch.io page and Epic slug read from their links - with an API key.",
     "keywords": [
         "rawg",
         "game",
         "games",
         "database",
         "framework-agnostic",
-        "omnigame"
+        "omniplay"
     ],
-    "homepage": "https://github.com/glitchr-omnisense/omnigame-rawg",
+    "homepage": "https://github.com/glitchr-omnisense/omniplay-rawg",
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "omnisense/omnigame": "^1.0@dev",
+        "omnisense/omniplay": "^1.0@dev",
         "symfony/http-client": "^6.4|^7.0|^8.0"
     },
     "require-dev": {
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Omnigame\\Rawg\\": ""
+            "Omniplay\\Rawg\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -37,7 +37,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnigame\\Rawg\\Tests\\": "Tests/"
+            "Omniplay\\Rawg\\Tests\\": "Tests/"
         }
     },
     "extra": {

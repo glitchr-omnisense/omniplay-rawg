@@ -1,6 +1,6 @@
-# omnigame/rawg
+# omniplay/rawg
 
-RAWG for [omnisense/omnigame](https://github.com/glitchr-omnisense/omnigame), with an API key: search
+RAWG for [omnisense/omniplay](https://github.com/glitchr-omnisense/omniplay), with an API key: search
 and a game's record by its RAWG number or slug, with its description, release date, studios,
 platforms, genres, tags, RAWG and Metacritic scores, and the stores that sell it - its Steam
 number, itch.io page and Epic slug read from their links. The provider calls:
@@ -16,10 +16,10 @@ The key travels in the query string (`key=`), as RAWG takes it.
 ## Installation
 
 ```sh
-composer require omnigame/rawg
+composer require omniplay/rawg
 ```
 
-Requires PHP 8.2, `omnisense/omnigame` (1.x) and `symfony/http-client` (6.4, 7 or 8).
+Requires PHP 8.2, `omnisense/omniplay` (1.x) and `symfony/http-client` (6.4, 7 or 8).
 
 ## Credentials
 
@@ -31,7 +31,7 @@ requests a month.
 | Option | Type | Default | Required | |
 |---|---|---|---|---|
 | `api_key` | string | - | yes | |
-| `user_agent` | string | `omnigame/1.0 (+https://github.com/glitchr-omnisense/omnigame)` | no | |
+| `user_agent` | string | `omniplay/1.0 (+https://github.com/glitchr-omnisense/omniplay)` | no | |
 | `api` | string | `https://api.rawg.io/api` | no | |
 
 ## Capabilities
@@ -71,15 +71,15 @@ identifiers), `page_size` the limit.
 
 require __DIR__.'/vendor/autoload.php';
 
-use Omnigame\Model\GameRef;
-use Omnigame\Model\Scheme;
-use Omnigame\Rawg\RawgFactory;
+use Omniplay\Model\GameRef;
+use Omniplay\Model\Scheme;
+use Omniplay\Rawg\RawgFactory;
 use Symfony\Component\HttpClient\HttpClient;
 
 $rawg = (new RawgFactory(HttpClient::create()))->create(['api_key' => getenv('RAWG_KEY')]);
 
 $portal = $rawg->game(GameRef::rawg('portal-2'));
-echo $portal->title, ' - Steam ', $portal->identifiers->get(Scheme::Steam), "\n";   // leads to omnigame/steam
+echo $portal->title, ' - Steam ', $portal->identifiers->get(Scheme::Steam), "\n";   // leads to omniplay/steam
 ```
 
 The record read from the package's test answers (written after RAWG's documentation; no key was
@@ -102,11 +102,11 @@ In Symfony:
 
 ```yaml
 services:
-    Omnigame\Rawg\RawgFactory:
+    Omniplay\Rawg\RawgFactory:
         arguments: ['@http_client']
-    Omnigame\Registry:
+    Omniplay\Registry:
         arguments:
-            $factories: ['@Omnigame\Rawg\RawgFactory']
+            $factories: ['@Omniplay\Rawg\RawgFactory']
             $config:
                 rawg: { factory: rawg, options: { api_key: '%env(RAWG_KEY)%' } }
 ```
