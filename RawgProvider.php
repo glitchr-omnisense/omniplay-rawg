@@ -18,6 +18,8 @@ use Omniplay\Model\Rating;
 use Omniplay\Model\Scheme;
 use Omniplay\ProviderInterface;
 use Omniplay\SearchInterface;
+use Omnisense\Contracts\Policy\DeclaresUsagePolicyInterface;
+use Omnisense\Contracts\Policy\UsagePolicy;
 
 /**
  * RAWG's games database with an API key: search, a game's record by its
@@ -25,8 +27,13 @@ use Omniplay\SearchInterface;
  * that sell it (/games/{id}/stores), whose links give its Steam number,
  * its itch.io page and its Epic slug.
  */
-final class RawgProvider implements ProviderInterface, SearchInterface, CatalogueInterface
+final class RawgProvider implements ProviderInterface, SearchInterface, CatalogueInterface, DeclaresUsagePolicyInterface
 {
+    /** RAWG's usage policy, as its terms read on the day it says (provenance.verifiedAt). */
+    public const POLICY = __DIR__.'/policy.json';
+
+    private static ?UsagePolicy $policy = null;
+
     /** A store link's pattern and the identifier it holds. */
     private const STORES = [
         'steam' => '~store\.steampowered\.com/app/(\d+)~',
@@ -48,6 +55,11 @@ final class RawgProvider implements ProviderInterface, SearchInterface, Catalogu
         return 'RAWG';
     }
 
+    public function usagePolicy(): UsagePolicy
+    {
+        return self::$policy ??= UsagePolicy::fromFile(self::POLICY);
+    }
+
     public function capabilities(): Capabilities
     {
         return new Capabilities(
@@ -56,6 +68,7 @@ final class RawgProvider implements ProviderInterface, SearchInterface, Catalogu
             lookupBy: [Scheme::Rawg],
             attribution: 'Data from RAWG (rawg.io), with a link on every page that shows it',
             terms: ['https://rawg.io/apidocs', 'https://rawg.io/tos_api'],
+            policy: $this->usagePolicy(),
         );
     }
 

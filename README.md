@@ -34,6 +34,10 @@ it reaches. The MIT licence covers this code only and grants no right to the ser
 whoever runs it complies with the terms above and obtains what they require. The authors publish
 it free of charge, make no commercial use of it and accept no liability for its use.
 
+## Usage policy
+
+The package declares its usage policy as data, in [policy.json](policy.json) (omnisense/contracts' schema). rawg.io could not be reached on 2026-11-10 (Cloudflare 522 on every host), so the limits and commercial use are declared unknown (`verifiedAt` null). The 20,000 requests a month quoted elsewhere, and the API description's free commercial use up to 100,000 monthly active users, sit in the notes. Declared from RAWG's own API description: a key on every request, RAWG credited with an active hyperlink on every page, no cloning (redistribution forbidden).
+
 ## Licence
 
 MIT.

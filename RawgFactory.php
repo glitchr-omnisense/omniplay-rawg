@@ -29,6 +29,6 @@ final class RawgFactory extends ProviderFactory
 
     protected function build(Config $c): ProviderInterface
     {
-        return new RawgProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'RAWG', ['Accept' => 'application/json', 'User-Agent' => (string) $c->string('user_agent')]), (string) $c->string('api_key'), rtrim((string) $c->string('api'), '/'));
+        return new RawgProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'RAWG', ['Accept' => 'application/json', 'User-Agent' => (string) $c->string('user_agent')], $c->backoff()), (string) $c->string('api_key'), rtrim((string) $c->string('api'), '/'));
     }
 }

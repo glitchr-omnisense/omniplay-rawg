@@ -138,3 +138,7 @@ An independent, unofficial client, affiliated with RAWG in no way. From
 [rawg.io/apidocs](https://rawg.io/apidocs): an active hyperlink to RAWG on every page that shows
 its data; free for commercial use under 100,000 monthly active users, larger projects by agreement.
 See the README.
+
+## Usage policy
+
+The package declares its usage policy as data, in [policy.json](../policy.json) (omnisense/contracts' schema). rawg.io could not be reached on 2026-11-10 (Cloudflare 522 on every host), so the limits and commercial use are declared unknown (`verifiedAt` null). The 20,000 requests a month quoted elsewhere, and the API description's free commercial use up to 100,000 monthly active users, sit in the notes. Declared from RAWG's own API description: a key on every request, RAWG credited with an active hyperlink on every page, no cloning (redistribution forbidden). `RawgProvider::usagePolicy()` reads it, and its Capabilities carry it (`policy()`).

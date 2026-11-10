@@ -1,0 +1,39 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "rawg",
+    "rateLimits": null,
+    "rights": {
+        "commercial": "unknown",
+        "openSourceRequired": null,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "unknown",
+        "redistribution": "forbidden",
+        "attribution": {
+            "required": true,
+            "text": "Data from RAWG (rawg.io), with a link on every page that shows it",
+            "url": "https://rawg.io",
+            "where": [
+                "display"
+            ]
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://rawg.io/tos_api",
+        "policy": "https://rawg.io/apidocs",
+        "verifiedAt": null,
+        "declaredBy": "maintainer",
+        "contact": "api@rawg.io",
+        "notes": "Not read at the source: rawg.io, rawg.io/apidocs, rawg.io/tos_api and api.rawg.io all answered 522 (Cloudflare: the origin unreachable) on 2026-11-10. RAWG's own API description (its OpenAPI info, as APIs.guru mirrors it) asks every request to carry the key, the data and images credited to RAWG with an active hyperlink from every page that uses them, and \"no cloning\" of RAWG; it calls the API free for commercial use for projects of at most 100,000 monthly active users or 500,000 page views a month, larger ones writing to api@rawg.io - while search engines' copies of /apidocs give a free tier of 20,000 requests a month for non-commercial projects: limits and commercial use are not declared until read at the source."
+    }
+}
