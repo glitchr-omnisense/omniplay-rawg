@@ -13,6 +13,17 @@ $portal = $rawg->game(GameRef::rawg('portal-2'));
 
 Options: `api_key` (required), `user_agent`, `api`.
 
+## Install
+
+```sh
+composer require omniplay/rawg
+```
+
+It requires `omnisense/omniplay` `^1.0`, installed with it. A real call needs: **a RAWG API key**.
+With no account, its tests run on recorded answers (a `MockHttpClient`), and
+[omnisense/omniplay](https://github.com/glitchr-omnisense/omniplay#install-and-a-first-call)'s
+README has a first call that runs without one.
+
 ## RAWG's terms, as read on 2026-10-24
 
 From [rawg.io/apidocs](https://rawg.io/apidocs): the free plan allows "up to 20,000 requests per
